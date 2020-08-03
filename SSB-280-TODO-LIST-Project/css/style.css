@@ -1,0 +1,91 @@
+/* ============= Details=============
+    Coded by: Saleh Ibne Omar
+    SBB-280
+*/
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Recursive', sans-serif;
+    background: rgba(241, 242, 246,1.0);
+}
+
+section{
+    width: 100%;;
+    display: none;
+}
+
+.wrapper{
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.main-card{
+    width: 100% !important;
+    margin-top: 60px !important;
+}
+
+.main-heading{
+    padding: 10px;
+    text-align: center;
+}
+
+tr{
+    text-align: center;
+    cursor: pointer;
+}
+
+tr:hover{
+    background: rgba(220, 220, 220, 1) !important;
+}
+
+.table-content{
+    overflow-x: auto !important;
+}
+
+#input-err{
+    color: red !important;
+}
+
+.action-btn:hover, #add-to-list-btn:hover{
+    background: rgba(0, 0, 0, 0.7) !important;
+}
+
+
+/* ============= Media Query =============*/
+
+@media all and (max-width: 1400px){
+    .wrapper{
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 1200px){
+    .wrapper{
+        width: 100%;
+        padding: 5px;
+    }
+
+    .table-content{
+        padding: 0px !important;
+    }
+
+    table{
+        border-radius: 0 !important;
+    }
+    .main-card{
+        margin-top: 40px !important;
+    }
+}
+
+@media all and (max-width: 1050px){
+    .action-btn{
+        font-size: 9pt !important;
+        margin-bottom: 10px !important;
+    }
+    .main-card{
+        margin-top: 10px !important;
+    }
+}
