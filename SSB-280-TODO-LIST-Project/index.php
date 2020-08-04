@@ -54,15 +54,15 @@
         <div class="ui form content">
             <div class="field">
                 <label for="title">Title</label>
-                <input type="text" name="title" id="title" placeholder="Title">
+                <input type="text" name="title" id="title" placeholder="Title" value="">
             </div>
             <div class="field">
                 <label for="fromDate">From</label>
-                <input type="date" name="fromDate" id="fromDate">
+                <input type="date" name="fromDate" id="fromDate" value="">
             </div>
             <div class="field">
                 <label for="toDate">To</label>
-                <input type="date" name="toDate" id="toDate">
+                <input type="date" name="toDate" id="toDate" value="">
             </div>
             <span id="input-err"></span>
         </div>
@@ -139,9 +139,14 @@
                 data: 'id='+id,
                 success: function(data){
                     var data = JSON.parse(data);
-                    $('#title').attr("value", data.workName);
-                    $('#fromDate').attr("value", data.fromDate);
-                    $('#toDate').attr("value", data.toDate);
+                    if(data==null){
+                        readAll();
+                    }
+                    else{
+                        $('#title').val(data.workName);
+                        $('#fromDate').val(data.fromDate);
+                        $('#toDate').val(data.toDate);
+                    }
                 }
             });
         }
@@ -165,7 +170,7 @@
             readById($(this).val());
         });
 
-        $(document).on('click', '.cancel-btn', function(){
+        $(document).on('click', '#cancel-submit', function(){
             $('#input-err').text("");
             $('#title').val("");
             $('#fromDate').val("");
