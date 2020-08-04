@@ -75,9 +75,7 @@
     <!-- Form modal ends -->
 
 <div class="ui mini modal">
-
 </div>
-
 
 
 <!-- Script Tags -->
@@ -134,6 +132,20 @@
             });
         }
 
+        function readById(id){
+            $.ajax({
+                url: "operations/readById.php",
+                method: "POST",
+                data: 'id='+id,
+                success: function(data){
+                    var data = JSON.parse(data);
+                    $('#title').attr("value", data.workName);
+                    $('#fromDate').attr("value", data.fromDate);
+                    $('#toDate').attr("value", data.toDate);
+                }
+            });
+        }
+
 //======================= On Click Functions =======================
 
         $('#add-to-list-btn').on('click', function(){
@@ -150,6 +162,7 @@
             $('#form-submit-btn').text("Update");
             $('#form-submit-btn').attr("name", "update-work");
             $('#hidden-input').attr("name", "update");
+            readById($(this).val());
         });
 
         $(document).on('click', '.cancel-btn', function(){
