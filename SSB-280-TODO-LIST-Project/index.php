@@ -49,7 +49,7 @@
     <!-- Main section ends -->
 
     <!-- Form modal starts -->
-    <form class="ui modal"  method="POST">
+    <form class="ui small modal" method="POST" id="form">
         <div class="header" id="form-title"></div>
         <div class="ui form content">
             <div class="field">
@@ -67,11 +67,16 @@
             <span id="input-err"></span>
         </div>
         <div class="actions">
+            <input type="hidden" id="hidden-input">
             <div class="ui cancel button" id="cancel-submit">Cancel</div>
             <button type="submit" class="ui blue button" id="form-submit-btn"></button>
         </div>
     </form>
     <!-- Form modal ends -->
+
+<div class="ui mini modal">
+
+</div>
 
 
 
@@ -82,7 +87,7 @@
     <script>
 
     $(window).on('load', function () {
-        setTimeout(function(){
+        setTimeout(() => {
             $('#loader').fadeOut('slow', function () {
                 $('#loader').remove();
             });
@@ -99,10 +104,10 @@
 
         function readAll(){
             $.ajax({
-                url:     "operations/read.php",
+                url:     "operations/readAll.php",
                 method:  "POST",
                 success: function(data){
-                    setTimeout(function(){
+                    setTimeout(() => {
                         $('#data-table').html(data);
                     }, 600);
                 },
@@ -112,23 +117,42 @@
             });
         }
 
+        function createOrUpdate(url, data){
+            $('#form-submit-btn').addClass("loading");
+            $.ajax({
+                url:     url,
+                method:  "POST",
+                data:    data,
+                success: function(returnedData){
+                    setTimeout(() => {
+                        $('#form-submit-btn').removeClass("loading");
+                        $('.ui.mini.modal').modal('show');
+                        $('.ui.mini.modal').html(returnedData);
+                        readAll();
+                    }, 500);
+                }
+            });
+        }
+
 //======================= On Click Functions =======================
 
         $('#add-to-list-btn').on('click', function(){
-            $('.ui.modal').modal('show');
+            $('.ui.small.modal').modal('show');
             $('#form-title').text("Add To List");
             $('#form-submit-btn').text("Submit");
-            $('#form-submit-btn').attr("name", "add-to-list-btn");
+            $('#form-submit-btn').attr("name", "add-to-list");
+            $('#hidden-input').attr("name", "create");
         });
 
         $(document).on('click', '.work-edit-btn', function(){
-            $('.ui.modal').modal('show');
+            $('.ui.small.modal').modal('show');
             $('#form-title').text("Update Work");
             $('#form-submit-btn').text("Update");
-            $('#form-submit-btn').attr("name", "updateWork");
+            $('#form-submit-btn').attr("name", "update-work");
+            $('#hidden-input').attr("name", "update");
         });
 
-        $('#cancel-submit').on('click', function(){
+        $(document).on('click', '.cancel-btn', function(){
             $('#input-err').text("");
             $('#title').val("");
             $('#fromDate').val("");
@@ -151,12 +175,25 @@
                     $('#input-err').text("Title cannot have more than 200 characters!");
                 }
                 else{
+                    var submitType = $('#form-submit-btn').attr("name");
+                    var url = "";
+                    if(submitType=="update-work"){
+                        url = "operations/update.php";
+                    }
+                    else if(submitType=="add-to-list"){
+                        url = "operations/create.php";
+                    }
+
+                    var data = $('#form').serialize();
+
+//======================= Ajax Function call =======================
+                    createOrUpdate(url, data);
                     
                 }
             }
         });
 
-//======================= Ajax Function calls =======================
+//======================= Ajax Function call =======================
 
         readAll();
                     
