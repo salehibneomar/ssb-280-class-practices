@@ -41,10 +41,6 @@ tr:hover{
     background: rgba(220, 220, 220, 1) !important;
 }
 
-.table-content{
-    overflow-x: auto !important;
-}
-
 #input-err{
     color: red !important;
 }

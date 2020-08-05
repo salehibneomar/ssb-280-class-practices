@@ -67,16 +67,15 @@
             <span id="input-err"></span>
         </div>
         <div class="actions">
-            <input type="hidden" id="hidden-input">
+            <input type="hidden" id="work-id" value="">
+            <input type="hidden" id="submit-type">
             <div class="ui cancel button" id="cancel-submit">Cancel</div>
             <button type="submit" class="ui blue button" id="form-submit-btn"></button>
         </div>
     </form>
     <!-- Form modal ends -->
 
-<div class="ui mini modal">
-</div>
-
+<div class="ui mini modal"></div>
 
 <!-- Script Tags -->
     <script src="js/jquery-3.5.1.min.js"></script>
@@ -110,24 +109,29 @@
                     }, 600);
                 },
                 error:  function(){
-                    $('#data-table').html('<p class="center aligned">Data fetching failed!</p>');
+                    $('#data-table').html('<p class="center aligned">Network Error: Data fetching failed!</p>');
                 }
             });
         }
 
         function createOrUpdate(url, data){
             $('#form-submit-btn').addClass("loading");
+            $('#form-submit-btn').addClass("disabled");
+
             $.ajax({
                 url:     url,
                 method:  "POST",
                 data:    data,
                 success: function(returnedData){
                     setTimeout(() => {
-                        $('#form-submit-btn').removeClass("loading");
                         $('.ui.mini.modal').modal('show');
                         $('.ui.mini.modal').html(returnedData);
+                        //========= Ajax Function call =========
                         readAll();
                     }, 500);
+                },
+                error:  function(){
+                    $('#input-err').text("Network Error: Couldn't perform operation!");;
                 }
             });
         }
@@ -140,13 +144,19 @@
                 success: function(data){
                     var data = JSON.parse(data);
                     if(data==null){
+                        //========= Ajax Function call =========
                         readAll();
                     }
                     else{
+                        $('#work-id').val(id);
                         $('#title').val(data.workName);
                         $('#fromDate').val(data.fromDate);
                         $('#toDate').val(data.toDate);
                     }
+                },
+                error:  function(){
+                    $('#input-err').text("Network Error: Couldn't fetch data!");
+                    $('#form-submit-btn').addClass("disabled");
                 }
             });
         }
@@ -158,7 +168,7 @@
             $('#form-title').text("Add To List");
             $('#form-submit-btn').text("Submit");
             $('#form-submit-btn').attr("name", "add-to-list");
-            $('#hidden-input').attr("name", "create");
+            $('#submit-type').attr("name", "create");
         });
 
         $(document).on('click', '.work-edit-btn', function(){
@@ -166,15 +176,22 @@
             $('#form-title').text("Update Work");
             $('#form-submit-btn').text("Update");
             $('#form-submit-btn').attr("name", "update-work");
-            $('#hidden-input').attr("name", "update");
+            $('#submit-type').attr("name", "update");
+            $('#work-id').attr("name", "id");
+            //========= Ajax Function call =========
             readById($(this).val());
         });
 
-        $(document).on('click', '#cancel-submit', function(){
-            $('#input-err').text("");
-            $('#title').val("");
-            $('#fromDate').val("");
-            $('#toDate').val("");
+
+        $('.ui.small.modal').modal({
+            onHide: function(){
+                $('#input-err').text("");
+                $('form').find('input').val("");
+                $('#form-submit-btn').removeClass("loading");
+                setTimeout(() => {
+                    $('#form-submit-btn').removeClass("disabled");
+                }, 500);
+            }
         });
 
 //======================= Form Submission Functions =======================
@@ -203,15 +220,15 @@
                     }
 
                     var data = $('#form').serialize();
-
-//======================= Ajax Function call =======================
+                    
+                    //========= Ajax Function call =========
                     createOrUpdate(url, data);
                     
                 }
             }
         });
 
-//======================= Ajax Function call =======================
+        //========= Ajax Function call =========
 
         readAll();
                     
