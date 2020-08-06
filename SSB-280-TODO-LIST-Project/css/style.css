@@ -2,7 +2,9 @@
     Coded by: Saleh Ibne Omar
     SBB-280
 */
+
 body{
+    width: 100%;
     margin: 0;
     padding: 0;
     display: flex;
@@ -14,6 +16,7 @@ body{
 section{
     width: 100%;;
     display: none;
+    margin-bottom: 40px;
 }
 
 .wrapper{
@@ -47,6 +50,16 @@ tr:hover{
 
 .action-btn:hover, #add-to-list-btn:hover{
     background: rgba(0, 0, 0, 0.7) !important;
+}
+
+.footer{
+    display: none;
+    width: 100%;
+    margin: auto 0 0 0 !important;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    background: rgba(87, 96, 111,1.0) !important;
 }
 
 
