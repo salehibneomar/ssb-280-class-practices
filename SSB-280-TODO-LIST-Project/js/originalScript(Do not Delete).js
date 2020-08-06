@@ -128,6 +128,7 @@
                 $('#confirmation-modal').modal('show');
                 $('#confirm-btn').on("click", function(){
                     $('#confirm-btn').addClass("loading disabled");
+                    $('#confirm-msg-details').text("Are you sure you want to delete this work? you won't be able to revert this!");
                     //========= Ajax Function call =========
                     deleteWork(id);
                 });
@@ -138,6 +139,7 @@
                 $('#confirmation-modal').modal('show');
                 $('#confirm-btn').on("click", function(){
                     $('#confirm-btn').addClass("loading disabled");
+                    $('#confirm-msg-details').text("Are you sure you want to mark this work as done?");
                     //========= Ajax Function call =========
                     markWorkAsDone(id);
                 });
@@ -160,8 +162,14 @@
                     setTimeout(() => {
                         $('#confirm-btn').removeClass("disabled");
                         $('#confirm-msg-details').css("color", "black");
-                        $('#confirm-msg-details').text("Are you sure? you won't be able to revert this!");
+                        $('#confirm-msg-details').text("");
                     }, 500);
+                }
+            });
+
+            $('#message-modal').modal({
+                onHide: function(){
+                    $('#message-modal').html("");
                 }
             });
     
