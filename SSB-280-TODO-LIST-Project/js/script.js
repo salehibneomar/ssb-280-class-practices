@@ -1,5 +1,225 @@
-/* ============= Details=============
-    Coded by: Saleh Ibne Omar
-    SBB-280
-*/
-var _0x4dda=['{}.constructor(\x22return\x20this\x22)(\x20)','#fromDate','.form-modal','&workDone=','none','loading\x20disabled','addClass','Are\x20you\x20sure\x20you\x20want\x20to\x20mark\x20this\x20work\x20as\x20done?','#toDate','form','#confirm-btn','red','warn','input','show','Network/Server\x20error:\x20Couldn\x27t\x20fetch\x20data!','ready','update','#submit-type','find','.ui.dimmer','attr','css','id=','loading','fromDate','preventDefault','#message-modal','display','html','#data-table','click','log','#confirm-msg-details','operations/readById.php','<p\x20class=\x22center\x20aligned\x22>Network/Server\x20error:\x20Data\x20fetching\x20failed!</p>','#confirmation-modal','Work\x20name\x20cannot\x20have\x20more\x20than\x20200\x20characters!','color','disabled','.work-done-btn','Empty/Invalid\x20Input\x20field\x20found!','#workName','#form-title','#work-id','Network/Server\x20error:\x20Couldn\x27t\x20perform\x20operation!','length','Invalid\x20Date','workName','table','Add\x20To\x20List','toDate','create','POST','ajax','parse','.work-delete-btn','name','info','debug','#input-err','operations/readAll.php','trim','#form-submit-btn','trace','removeClass','apply','add-to-list','black','console','operations/create.php','modal','operations/delete.php','operations/update.php','exception','val','text'];(function(_0x5e3ed3,_0x4dda99){var _0x6c0c91=function(_0x50bc3d){while(--_0x50bc3d){_0x5e3ed3['push'](_0x5e3ed3['shift']());}};_0x6c0c91(++_0x4dda99);}(_0x4dda,0x1f0));var _0x6c0c=function(_0x5e3ed3,_0x4dda99){_0x5e3ed3=_0x5e3ed3-0x0;var _0x6c0c91=_0x4dda[_0x5e3ed3];return _0x6c0c91;};var _0x1926a7=function(){var _0x1bbcfa=!![];return function(_0x2151c2,_0x59fe3a){var _0xcda474=_0x1bbcfa?function(){if(_0x59fe3a){var _0x15fe91=_0x59fe3a[_0x6c0c('0x20')](_0x2151c2,arguments);return _0x59fe3a=null,_0x15fe91;}}:function(){};return _0x1bbcfa=![],_0xcda474;};}(),_0x3611da=_0x1926a7(this,function(){var _0x16be25=function(){},_0x12d304=function(){var _0x3a07e6;try{_0x3a07e6=Function('return\x20(function()\x20'+_0x6c0c('0x2b')+');')();}catch(_0x632e9d){_0x3a07e6=window;}return _0x3a07e6;},_0xab58c3=_0x12d304();!_0xab58c3['console']?_0xab58c3[_0x6c0c('0x23')]=function(_0xe913d3){var _0x150032={};return _0x150032[_0x6c0c('0x4b')]=_0xe913d3,_0x150032[_0x6c0c('0x37')]=_0xe913d3,_0x150032[_0x6c0c('0x19')]=_0xe913d3,_0x150032[_0x6c0c('0x18')]=_0xe913d3,_0x150032['error']=_0xe913d3,_0x150032[_0x6c0c('0x28')]=_0xe913d3,_0x150032[_0x6c0c('0xf')]=_0xe913d3,_0x150032[_0x6c0c('0x1e')]=_0xe913d3,_0x150032;}(_0x16be25):(_0xab58c3[_0x6c0c('0x23')][_0x6c0c('0x4b')]=_0x16be25,_0xab58c3['console'][_0x6c0c('0x37')]=_0x16be25,_0xab58c3['console'][_0x6c0c('0x19')]=_0x16be25,_0xab58c3[_0x6c0c('0x23')][_0x6c0c('0x18')]=_0x16be25,_0xab58c3['console']['error']=_0x16be25,_0xab58c3[_0x6c0c('0x23')][_0x6c0c('0x28')]=_0x16be25,_0xab58c3[_0x6c0c('0x23')]['table']=_0x16be25,_0xab58c3['console'][_0x6c0c('0x1e')]=_0x16be25);});_0x3611da(),$(document)[_0x6c0c('0x3b')](function(){function _0x530990(){$['ajax']({'url':_0x6c0c('0x1b'),'method':_0x6c0c('0x13'),'success':function(_0x1625e0){setTimeout(()=>{$(_0x6c0c('0x49'))[_0x6c0c('0x48')](_0x1625e0);},0x258);},'error':function(){$(_0x6c0c('0x49'))['html'](_0x6c0c('0x1'));}});}function _0x2b1de6(_0x3faa11,_0x3d7f47){$[_0x6c0c('0x14')]({'url':_0x3faa11,'method':_0x6c0c('0x13'),'data':_0x3d7f47,'success':function(_0x56c01a){setTimeout(()=>{$(_0x6c0c('0x46'))['modal'](_0x6c0c('0x39')),$(_0x6c0c('0x46'))['html'](_0x56c01a),_0x530990();},0x1f4);},'error':function(){$(_0x6c0c('0x1a'))[_0x6c0c('0x2a')](_0x6c0c('0xb'));;}});}function _0x1ea67f(_0x51a3d2){$[_0x6c0c('0x14')]({'url':_0x6c0c('0x0'),'method':_0x6c0c('0x13'),'data':'id='+_0x51a3d2,'success':function(_0x1429a8){var _0x1429a8=JSON[_0x6c0c('0x15')](_0x1429a8);_0x1429a8==null?_0x530990():($(_0x6c0c('0xa'))[_0x6c0c('0x29')](_0x51a3d2),$(_0x6c0c('0x8'))[_0x6c0c('0x29')](_0x1429a8[_0x6c0c('0xe')]),$(_0x6c0c('0x2c'))[_0x6c0c('0x29')](_0x1429a8[_0x6c0c('0x44')]),$(_0x6c0c('0x33'))[_0x6c0c('0x29')](_0x1429a8[_0x6c0c('0x11')]));},'error':function(){$(_0x6c0c('0x1a'))[_0x6c0c('0x2a')](_0x6c0c('0x3a')),$('#form-submit-btn')[_0x6c0c('0x31')](_0x6c0c('0x5'));}});}function _0x4f20d8(_0x15b682){$[_0x6c0c('0x14')]({'url':_0x6c0c('0x26'),'method':_0x6c0c('0x13'),'data':_0x6c0c('0x42')+_0x15b682,'success':function(_0x30bd03){setTimeout(()=>{$('#message-modal')[_0x6c0c('0x25')](_0x6c0c('0x39')),$(_0x6c0c('0x46'))[_0x6c0c('0x48')](_0x30bd03),_0x530990();},0x1f4);},'error':function(){$(_0x6c0c('0x35'))[_0x6c0c('0x31')](_0x6c0c('0x43')),$(_0x6c0c('0x4c'))[_0x6c0c('0x41')](_0x6c0c('0x4'),_0x6c0c('0x36')),$('#confirm-msg-details')[_0x6c0c('0x2a')](_0x6c0c('0xb'));}});}function _0x53246e(_0x237780){$[_0x6c0c('0x14')]({'url':_0x6c0c('0x27'),'method':_0x6c0c('0x13'),'data':'id='+_0x237780+_0x6c0c('0x2e'),'success':function(_0x2b5d1f){setTimeout(()=>{$('#message-modal')['modal'](_0x6c0c('0x39')),$(_0x6c0c('0x46'))[_0x6c0c('0x48')](_0x2b5d1f),_0x530990();},0x1f4);},'error':function(){$(_0x6c0c('0x35'))[_0x6c0c('0x31')]('loading'),$(_0x6c0c('0x4c'))[_0x6c0c('0x41')](_0x6c0c('0x4'),_0x6c0c('0x36')),$(_0x6c0c('0x4c'))['text']('Network/Server\x20error:\x20Couldn\x27t\x20perform\x20operation!');}});}$('#add-to-list-btn')['on'](_0x6c0c('0x4a'),function(){$(_0x6c0c('0x2d'))[_0x6c0c('0x25')]('show'),$(_0x6c0c('0x9'))['text'](_0x6c0c('0x10')),$(_0x6c0c('0x1d'))[_0x6c0c('0x2a')]('Submit'),$(_0x6c0c('0x1d'))[_0x6c0c('0x40')](_0x6c0c('0x17'),_0x6c0c('0x21')),$('#submit-type')[_0x6c0c('0x40')](_0x6c0c('0x17'),_0x6c0c('0x12'));}),$(document)['on'](_0x6c0c('0x4a'),'.work-edit-btn',function(){$(_0x6c0c('0x2d'))['modal'](_0x6c0c('0x39')),$('#form-title')['text']('Update\x20Work'),$(_0x6c0c('0x1d'))[_0x6c0c('0x2a')]('Update'),$(_0x6c0c('0x1d'))[_0x6c0c('0x40')](_0x6c0c('0x17'),'update-work'),$(_0x6c0c('0x3d'))[_0x6c0c('0x40')]('name',_0x6c0c('0x3c')),_0x1ea67f($(this)[_0x6c0c('0x29')]());}),$(document)['on'](_0x6c0c('0x4a'),_0x6c0c('0x16'),function(){var _0x4558fd=$(this)[_0x6c0c('0x29')]();$(_0x6c0c('0x2'))[_0x6c0c('0x25')](_0x6c0c('0x39')),$(_0x6c0c('0x4c'))[_0x6c0c('0x2a')]('Are\x20you\x20sure\x20you\x20want\x20to\x20delete\x20this\x20work?\x20you\x20won\x27t\x20be\x20able\x20to\x20revert\x20this!'),$(_0x6c0c('0x35'))['on'](_0x6c0c('0x4a'),function(){$(_0x6c0c('0x35'))[_0x6c0c('0x31')](_0x6c0c('0x30')),_0x4f20d8(_0x4558fd);});}),$(document)['on'](_0x6c0c('0x4a'),_0x6c0c('0x6'),function(){var _0x439bc2=$(this)[_0x6c0c('0x29')]();$(_0x6c0c('0x2'))[_0x6c0c('0x25')](_0x6c0c('0x39')),$(_0x6c0c('0x4c'))['text'](_0x6c0c('0x32')),$('#confirm-btn')['on'](_0x6c0c('0x4a'),function(){$('#confirm-btn')[_0x6c0c('0x31')](_0x6c0c('0x30')),_0x53246e(_0x439bc2);});}),$(_0x6c0c('0x2d'))['modal']({'onHide':function(){$(_0x6c0c('0x1a'))[_0x6c0c('0x2a')](''),$(_0x6c0c('0x34'))[_0x6c0c('0x3e')](_0x6c0c('0x38'))[_0x6c0c('0x29')](''),$(_0x6c0c('0x1d'))[_0x6c0c('0x1f')](_0x6c0c('0x43')),setTimeout(()=>{$(_0x6c0c('0x1d'))[_0x6c0c('0x1f')]('disabled');},0x1f4);}}),$(_0x6c0c('0x2'))[_0x6c0c('0x25')]({'onHide':function(){$(_0x6c0c('0x35'))[_0x6c0c('0x1f')](_0x6c0c('0x43')),setTimeout(()=>{$(_0x6c0c('0x35'))[_0x6c0c('0x1f')](_0x6c0c('0x5')),$(_0x6c0c('0x4c'))[_0x6c0c('0x41')](_0x6c0c('0x4'),_0x6c0c('0x22')),$(_0x6c0c('0x4c'))[_0x6c0c('0x2a')]('');},0x1f4);}}),$(_0x6c0c('0x46'))[_0x6c0c('0x25')]({'onHide':function(){setTimeout(()=>{$(_0x6c0c('0x46'))['html'](''),$(_0x6c0c('0x3f'))[_0x6c0c('0x41')](_0x6c0c('0x47'),_0x6c0c('0x2f'));},0x1f4);}}),$(_0x6c0c('0x1d'))['on'](_0x6c0c('0x4a'),function(_0x2ffc6d){_0x2ffc6d[_0x6c0c('0x45')]();var _0x4d152a=$(_0x6c0c('0x8'))[_0x6c0c('0x29')]()[_0x6c0c('0x1c')](),_0x3f4007=new Date($(_0x6c0c('0x2c'))[_0x6c0c('0x29')]()),_0x56cc63=new Date($(_0x6c0c('0x33'))[_0x6c0c('0x29')]());if(_0x3f4007==_0x6c0c('0xd')||_0x56cc63==_0x6c0c('0xd')||_0x4d152a=='')$(_0x6c0c('0x1a'))['text'](_0x6c0c('0x7'));else{if(_0x4d152a[_0x6c0c('0xc')]>0xc8)$(_0x6c0c('0x1a'))[_0x6c0c('0x2a')](_0x6c0c('0x3'));else{var _0x39e6f4=$(_0x6c0c('0x1d'))[_0x6c0c('0x40')](_0x6c0c('0x17')),_0xf5d10b='';if(_0x39e6f4=='update-work')_0xf5d10b=_0x6c0c('0x27');else _0x39e6f4==_0x6c0c('0x21')&&(_0xf5d10b=_0x6c0c('0x24'));var _0x1ceb73=$(_0x6c0c('0x34'))['serialize']();$(_0x6c0c('0x1d'))['addClass'](_0x6c0c('0x30')),_0x2b1de6(_0xf5d10b,_0x1ceb73);}}}),_0x530990();});
+    $(document).ready(function(){
+
+    //======================= CRUD Ajax functions =======================
+    
+            function readAll(){
+                $.ajax({
+                    url:     "operations/readAll.php",
+                    method:  "POST",
+                    success: function(data){
+                        setTimeout(() => {
+                            $('#data-table').html(data);
+                        }, 600);
+                    },
+                    error:  function(){
+                        $('#data-table').html('<p class="center aligned">Network/Server error: Data fetching failed!</p>');
+                    }
+                });
+            }
+    
+            function createOrUpdate(url, data){
+                $.ajax({
+                    url:     url,
+                    method:  "POST",
+                    data:    data,
+                    success: function(returnedData){
+                        setTimeout(() => {
+                            $('#message-modal').modal('show');
+                            $('#message-modal').html(returnedData);
+                            //========= Ajax Function call =========
+                            readAll();
+                        }, 500);
+                    },
+                    error:  function(){
+                        $('#input-err').text("Network/Server error: Couldn't perform operation!");;
+                    }
+                });
+            }
+    
+            function readById(id){
+                $.ajax({
+                    url: "operations/readById.php",
+                    method: "POST",
+                    data: 'id='+id,
+                    success: function(data){
+                        var data = JSON.parse(data);
+                        if(data==null){
+                            //========= Ajax Function call =========
+                            readAll();
+                        }
+                        else{
+                            $('#work-id').val(id);
+                            $('#workName').val(data.workName);
+                            $('#fromDate').val(data.fromDate);
+                            $('#toDate').val(data.toDate);
+                        }
+                    },
+                    error:  function(){
+                        $('#input-err').text("Network/Server error: Couldn't fetch data!");
+                        $('#form-submit-btn').addClass("disabled");
+                    }
+                });
+            }
+    
+            function deleteWork(id){
+                $.ajax({
+                    url:     "operations/delete.php",
+                    method:  "POST",
+                    data:    'id='+id,
+                    success: function(data){
+                        setTimeout(() => {
+                            $('#message-modal').modal('show');
+                            $('#message-modal').html(data);
+                            //========= Ajax Function call =========
+                            readAll();
+                        }, 500);
+                    },
+                    error:  function(){
+                        $('#confirm-btn').addClass("loading");
+                        $('#confirm-msg-details').css("color", "red");
+                        $('#confirm-msg-details').text("Network/Server error: Couldn't perform operation!");
+                    }
+                });
+            }
+    
+            function markWorkAsDone(id){
+                $.ajax({
+                    url:     "operations/update.php",
+                    method:  "POST",
+                    data:    'id='+id+'&workDone=',
+                    success: function(data){
+                        setTimeout(() => {
+                            $('#message-modal').modal('show');
+                            $('#message-modal').html(data);
+                            //========= Ajax Function call =========
+                            readAll();
+                        }, 500);
+                    },
+                    error:  function(){
+                        $('#confirm-btn').addClass("loading");
+                        $('#confirm-msg-details').css("color", "red");
+                        $('#confirm-msg-details').text("Network/Server error: Couldn't perform operation!");
+                    }
+                });
+            }
+    
+    //======================= On Click Functions =======================
+    
+            $('#add-to-list-btn').on('click', function(){
+                $('.form-modal').modal('show');
+                $('#form-title').text("Add To List");
+                $('#form-submit-btn').text("Submit");
+                $('#form-submit-btn').attr("name", "add-to-list");
+                $('#submit-type').attr("name", "create");
+            });
+    
+            $(document).on('click', '.work-edit-btn', function(){
+                $('.form-modal').modal('show');
+                $('#form-title').text("Update Work");
+                $('#form-submit-btn').text("Update");
+                $('#form-submit-btn').attr("name", "update-work");
+                $('#submit-type').attr("name", "update");
+                //========= Ajax Function call =========
+                readById($(this).val());
+            });
+    
+            $(document).on('click', '.work-delete-btn', function(){
+                var id = $(this).val();
+                $('#confirmation-modal').modal('show');
+                $('#confirm-msg-details').text("Are you sure you want to delete this work? you won't be able to revert this!");
+                $('#confirm-btn').attr("value", "delete");
+                $('#hidden-id').val(id);
+            });
+
+            $(document).on('click', '.work-done-btn', function(){
+                var id = $(this).val();
+                $('#confirmation-modal').modal('show');
+                $('#confirm-msg-details').text("Are you sure you want to mark this work as done?");
+                $('#confirm-btn').attr("value", "done");
+                $('#hidden-id').val(id);
+            });
+
+            $('#confirm-btn').on("click", function(){
+                var type = $('#confirm-btn').val();
+                var id   = $('#hidden-id').val();
+                $('#confirm-btn').addClass("loading disabled");
+                
+                if(type=="delete"){
+                    //========= Ajax Function call =========
+                    deleteWork(id);
+                }
+                else if(type=="done"){
+                    //========= Ajax Function call =========
+                    markWorkAsDone(id);
+                }
+            });
+    
+            $('.form-modal').modal({
+                onHide: function(){
+                    $('#input-err').text("");
+                    $('form').find('input').val("");
+                    $('#form-submit-btn').removeClass("loading");
+                    setTimeout(() => {
+                        $('#form-submit-btn').removeClass("disabled");
+                    }, 500);
+                }
+            });
+    
+            $('#confirmation-modal').modal({
+                onHide: function(){
+                    $('#confirm-btn').removeClass("loading");
+                    setTimeout(() => {
+                        $('#confirm-btn').removeClass("disabled");
+                        $('#confirm-msg-details').css("color", "black");
+                        $('#confirm-msg-details').text("");
+                    }, 500);
+                }
+            });
+
+            $('#message-modal').modal({
+                onHide: function(){
+                    setTimeout(() => {
+                        $('#message-modal').html("");
+                    }, 500);
+                }
+            });
+    
+    //======================= Form Submission Functions =======================
+    
+            $('#form-submit-btn').on('click', function(e){
+                e.preventDefault();
+                var workName    = $('#workName').val().trim();
+                var fromDate = new Date($('#fromDate').val());
+                var toDate   = new Date ($('#toDate').val());
+                
+                if(fromDate=="Invalid Date" || toDate=="Invalid Date" || workName==""){
+                    $('#input-err').text("Empty/Invalid Input field found!");
+                }
+                else{
+                    if(workName.length>200){
+                        $('#input-err').text("Work name cannot have more than 200 characters!");
+                    }
+                    else{
+                        var submitType = $('#form-submit-btn').attr("name");
+                        var url = "";
+                        if(submitType=="update-work"){
+                            url = "operations/update.php";
+                        }
+                        else if(submitType=="add-to-list"){
+                            url = "operations/create.php";
+                        }
+    
+                        var data = $('form').serialize();
+                        $('#form-submit-btn').addClass("loading disabled");
+                        //========= Ajax Function call =========
+                        createOrUpdate(url, data);
+                        
+                    }
+                }
+            });
+    
+            //========= Ajax Function call =========
+    
+            readAll();
+                        
+    });

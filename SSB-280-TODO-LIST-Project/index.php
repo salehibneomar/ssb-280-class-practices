@@ -92,6 +92,7 @@
         </div>
         <div class="actions">
             <div class="ui cancel red button">No</div>
+            <input type="hidden" value="" id="hidden-id">
             <button type="button" class="ui green button" id="confirm-btn">Yes</button>
         </div>
     </div>
