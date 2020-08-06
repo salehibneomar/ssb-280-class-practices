@@ -50,8 +50,7 @@
 
     <footer class="footer">
         &copy; 2020, Saleh Ibne Omar <br>
-        <?php 
-        echo $_SERVER['REMOTE_ADDR']; ?>
+        <?php echo $_SERVER['REMOTE_ADDR']; ?>
     </footer>
 
 
