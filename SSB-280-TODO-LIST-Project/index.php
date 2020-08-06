@@ -88,7 +88,7 @@
     <div class="ui mini modal" id="confirmation-modal">
         <div class="header">Confirmation&ensp;<i class="exclamation teal icon"></i></div>
         <div class="content">
-            <p id="confirm-msg-details">Are you sure? you won't be able to revert this!</p>
+            <p id="confirm-msg-details"></p>
         </div>
         <div class="actions">
             <div class="ui cancel red button">No</div>
