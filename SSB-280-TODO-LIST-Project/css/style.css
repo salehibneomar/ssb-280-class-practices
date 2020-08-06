@@ -28,11 +28,16 @@ section{
 .main-card{
     width: 100% !important;
     margin-top: 60px !important;
+    overflow: auto !important;
 }
 
 .main-heading{
     padding: 10px;
     text-align: center;
+}
+
+.table-content{
+    overflow: auto !important;
 }
 
 tr{
