@@ -4,12 +4,12 @@
 
     if(isset($_POST['update'])){
         $id         = $_POST['id'];
-        $workName   = $_POST['title'];
+        $workName   = $_POST['workName'];
         $fromDate   = $_POST['fromDate'];
         $toDate     = $_POST['toDate'];
 
         $query     = "UPDATE todolist SET workName='$workName', fromDate='$fromDate', toDate='$toDate' 
-                      WHERE id='$id'";
+                      WHERE id='$id' LIMIT 1";
         $execution = mysqli_query($conn, $query);
         
         if($execution==true){

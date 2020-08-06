@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List | SSB-280 | Saleh Ibne Omar</title>
+    <title>Todo List | Saleh Ibne Omar | SSB-280</title>
 
 <!-- Link Tags -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;700&display=swap">
@@ -49,12 +49,12 @@
     <!-- Main section ends -->
 
     <!-- Form modal starts -->
-    <form class="ui small modal" method="POST" id="form">
+    <form class="ui small modal form-modal" method="POST">
         <div class="header" id="form-title"></div>
         <div class="ui form content">
             <div class="field">
-                <label for="title">Title</label>
-                <input type="text" name="title" id="title" placeholder="Title" value="">
+                <label for="title">Work Name</label>
+                <input type="text" name="workName" id="workName" placeholder="Work Name" value="">
             </div>
             <div class="field">
                 <label for="fromDate">From</label>
@@ -67,7 +67,7 @@
             <span id="input-err"></span>
         </div>
         <div class="actions">
-            <input type="hidden" id="work-id" value="">
+            <input type="hidden" id="work-id" value="" name="id">
             <input type="hidden" id="submit-type">
             <div class="ui cancel button" id="cancel-submit">Cancel</div>
             <button type="submit" class="ui blue button" id="form-submit-btn"></button>
@@ -75,7 +75,19 @@
     </form>
     <!-- Form modal ends -->
 
-<div class="ui mini modal"></div>
+<div class="ui mini modal" id="message-modal">
+</div>
+
+<div class="ui mini modal" id="confirmation-modal">
+    <div class="header">Confirmation&ensp;<i class="exclamation teal icon"></i></div>
+    <div class="content">
+        <p id="confirm-msg-details">Are you sure? you won't be able to revert this!</p>
+    </div>
+    <div class="actions">
+        <div class="ui cancel red button">No</div>
+        <button type="button" class="ui green button" id="confirm-btn">Yes</button>
+    </div>
+</div>
 
 <!-- Script Tags -->
     <script src="js/jquery-3.5.1.min.js"></script>
@@ -109,29 +121,26 @@
                     }, 600);
                 },
                 error:  function(){
-                    $('#data-table').html('<p class="center aligned">Network Error: Data fetching failed!</p>');
+                    $('#data-table').html('<p class="center aligned">Network/Server error: Data fetching failed!</p>');
                 }
             });
         }
 
         function createOrUpdate(url, data){
-            $('#form-submit-btn').addClass("loading");
-            $('#form-submit-btn').addClass("disabled");
-
             $.ajax({
                 url:     url,
                 method:  "POST",
                 data:    data,
                 success: function(returnedData){
                     setTimeout(() => {
-                        $('.ui.mini.modal').modal('show');
-                        $('.ui.mini.modal').html(returnedData);
+                        $('#message-modal').modal('show');
+                        $('#message-modal').html(returnedData);
                         //========= Ajax Function call =========
                         readAll();
                     }, 500);
                 },
                 error:  function(){
-                    $('#input-err').text("Network Error: Couldn't perform operation!");;
+                    $('#input-err').text("Network/Server error: Couldn't perform operation!");;
                 }
             });
         }
@@ -149,14 +158,35 @@
                     }
                     else{
                         $('#work-id').val(id);
-                        $('#title').val(data.workName);
+                        $('#workName').val(data.workName);
                         $('#fromDate').val(data.fromDate);
                         $('#toDate').val(data.toDate);
                     }
                 },
                 error:  function(){
-                    $('#input-err').text("Network Error: Couldn't fetch data!");
+                    $('#input-err').text("Network/Server error: Couldn't fetch data!");
                     $('#form-submit-btn').addClass("disabled");
+                }
+            });
+        }
+
+        function deleteWork(id){
+            $.ajax({
+                url:     "operations/delete.php",
+                method:  "POST",
+                data:    'id='+id,
+                success: function(data){
+                    setTimeout(() => {
+                        $('#message-modal').modal('show');
+                        $('#message-modal').html(data);
+                        //========= Ajax Function call =========
+                        readAll();
+                    }, 500);
+                },
+                error:  function(){
+                    $('#confirm-btn').addClass("loading");
+                    $('#confirm-msg-details').css("color", "red");
+                    $('#confirm-msg-details').text("Network/Server error: Couldn't perform operation!");
                 }
             });
         }
@@ -164,7 +194,7 @@
 //======================= On Click Functions =======================
 
         $('#add-to-list-btn').on('click', function(){
-            $('.ui.small.modal').modal('show');
+            $('.form-modal').modal('show');
             $('#form-title').text("Add To List");
             $('#form-submit-btn').text("Submit");
             $('#form-submit-btn').attr("name", "add-to-list");
@@ -172,18 +202,27 @@
         });
 
         $(document).on('click', '.work-edit-btn', function(){
-            $('.ui.small.modal').modal('show');
+            $('.form-modal').modal('show');
             $('#form-title').text("Update Work");
             $('#form-submit-btn').text("Update");
             $('#form-submit-btn').attr("name", "update-work");
             $('#submit-type').attr("name", "update");
-            $('#work-id').attr("name", "id");
             //========= Ajax Function call =========
             readById($(this).val());
         });
 
+        $(document).on('click', '.work-delete-btn', function(){
+            var id = $(this).val();
+            $('#confirmation-modal').modal('show');
+            $('#confirm-btn').on("click", function(){
+                $('#confirm-btn').addClass("loading disabled");
+                //========= Ajax Function call =========
+                deleteWork(id);
+            });
+        });
 
-        $('.ui.small.modal').modal({
+
+        $('.form-modal').modal({
             onHide: function(){
                 $('#input-err').text("");
                 $('form').find('input').val("");
@@ -194,20 +233,31 @@
             }
         });
 
+        $('#confirmation-modal').modal({
+            onHide: function(){
+                $('#confirm-btn').removeClass("loading");
+                setTimeout(() => {
+                    $('#confirm-btn').removeClass("disabled");
+                    $('#confirm-msg-details').css("color", "black");
+                    $('#confirm-msg-details').text("Are you sure? you won't be able to revert this!");
+                }, 500);
+            }
+        });
+
 //======================= Form Submission Functions =======================
 
         $('#form-submit-btn').on('click', function(e){
             e.preventDefault();
-            var title    = $('#title').val().trim();
+            var workName    = $('#workName').val().trim();
             var fromDate = new Date($('#fromDate').val());
             var toDate   = new Date ($('#toDate').val());
             
-            if(fromDate=="Invalid Date" || toDate=="Invalid Date" || title==""){
+            if(fromDate=="Invalid Date" || toDate=="Invalid Date" || workName==""){
                 $('#input-err').text("Empty/Invalid Input field found!");
             }
             else{
-                if(title.length>200){
-                    $('#input-err').text("Title cannot have more than 200 characters!");
+                if(workName.length>200){
+                    $('#input-err').text("Work name cannot have more than 200 characters!");
                 }
                 else{
                     var submitType = $('#form-submit-btn').attr("name");
@@ -219,8 +269,8 @@
                         url = "operations/create.php";
                     }
 
-                    var data = $('#form').serialize();
-                    
+                    var data = $('form').serialize();
+                    $('#form-submit-btn').addClass("loading disabled");
                     //========= Ajax Function call =========
                     createOrUpdate(url, data);
                     

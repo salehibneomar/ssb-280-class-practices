@@ -3,7 +3,7 @@
     require '../config/config.php';
              
     if(isset($_POST['create'])){
-        $workName   = $_POST['title'];
+        $workName   = $_POST['workName'];
         $fromDate   = $_POST['fromDate'];
         $toDate     = $_POST['toDate'];
 

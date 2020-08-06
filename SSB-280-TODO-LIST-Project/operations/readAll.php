@@ -17,11 +17,11 @@
                         <thead>
                             <tr>
                                 <th width="2%">#</th>
-                                <th width="32%">Title</th>
+                                <th width="34%">Work Name</th>
                                 <th width="12%">From</th>
                                 <th width="12%">To</th>
                                 <th width="8%">Remaining</th>
-                                <th width="12%">Status</th>
+                                <th width="10%">Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
