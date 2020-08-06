@@ -126,9 +126,9 @@
             $(document).on('click', '.work-delete-btn', function(){
                 var id = $(this).val();
                 $('#confirmation-modal').modal('show');
+                $('#confirm-msg-details').text("Are you sure you want to delete this work? you won't be able to revert this!");
                 $('#confirm-btn').on("click", function(){
                     $('#confirm-btn').addClass("loading disabled");
-                    $('#confirm-msg-details').text("Are you sure you want to delete this work? you won't be able to revert this!");
                     //========= Ajax Function call =========
                     deleteWork(id);
                 });
@@ -137,9 +137,9 @@
             $(document).on('click', '.work-done-btn', function(){
                 var id = $(this).val();
                 $('#confirmation-modal').modal('show');
+                $('#confirm-msg-details').text("Are you sure you want to mark this work as done?");
                 $('#confirm-btn').on("click", function(){
                     $('#confirm-btn').addClass("loading disabled");
-                    $('#confirm-msg-details').text("Are you sure you want to mark this work as done?");
                     //========= Ajax Function call =========
                     markWorkAsDone(id);
                 });
@@ -169,7 +169,10 @@
 
             $('#message-modal').modal({
                 onHide: function(){
-                    $('#message-modal').html("");
+                    setTimeout(() => {
+                        $('#message-modal').html("");
+                        $('.ui.dimmer').css('display', 'none');
+                    }, 500);
                 }
             });
     
