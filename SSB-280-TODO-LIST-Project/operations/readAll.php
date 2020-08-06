@@ -1,7 +1,7 @@
 <?php
     require '../config/config.php';
 
-    $query      = "SELECT * FROM todolist";
+    $query      = "SELECT * FROM todolist ORDER BY id DESC";
     $execution  = mysqli_query($conn, $query);
 
     $data        = '';

@@ -31,17 +31,17 @@
         <div class="wrapper">
             <div class="ui card main-card">
                 <div class="content">
+                    <button class="ui blue right floated button" id="add-to-list-btn">
+                        <i class="fas fa-plus"></i>&ensp;Add To List
+                    </button>
+                </div>
+                <div class="content">
                     <div class="header main-heading">
                         <h3>Basic ToDo List App</h3>
                     </div>
                 </div>
                 <div class="content table-content" id="data-table">
                     <!-- Data Table section -->
-                </div>
-                <div class="extra content">
-                    <button class="ui blue button" id="add-to-list-btn">
-                        <i class="fas fa-plus"></i>&ensp;Add To List
-                    </button>
                 </div>
             </div>
         </div>
